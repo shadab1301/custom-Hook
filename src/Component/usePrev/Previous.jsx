@@ -1,7 +1,18 @@
 import React from 'react';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { useRef } from 'react';
+import usePrev from './usePrev';
 
 const Previous = () => {
-  const { currValue, prevValue, increment, decrement } = {};
+  // const { currValues, prevValue, increments } = {};
+  const [currValue,setCurrValue]=useState(0)
+  const prevValue=usePrev(currValue)
+  const increment=()=>{
+    setCurrValue(currValue+1)
+  }
+
+  
   return (
     <>
       <div className="container">
@@ -12,7 +23,6 @@ const Previous = () => {
         </div>
 
         <div className="counterContainer">
-          <button onClick={decrement}>Decrement</button>
           <span>{}</span>
           <button onClick={increment}>Increment</button>
         </div>
