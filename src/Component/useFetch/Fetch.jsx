@@ -9,8 +9,8 @@ const Fetch = () => {
   return (
     <>
      <h1>Data is coming from useFetch (Custom Hook)</h1>
-        {/* {isLoading && <>Loading...</>}
-        {isError && <>{isError} </>} */}
+        {isLoading && <>Loading...</>}
+        {isError && <>{isError} </>}
         <pre>{JSON.stringify(data,undefined,2)}</pre>
     
     </>
